@@ -24,7 +24,22 @@ public class PlayerPlatformerController : PhysicsObject {
         if (Input.GetButtonDown("Attack"))
         {
             animator.SetTrigger("attack");
-            
+        }
+
+        if (Input.GetAxis("Vertical") > 0)
+        {
+            animator.SetBool("lookUp", true);
+            animator.SetBool("lookDown", false);
+        }
+        else if (Input.GetAxis("Vertical") < 0)
+        {
+            animator.SetBool("lookUp", false);
+            animator.SetBool("lookDown", true);
+        }
+        else
+        {
+            animator.SetBool("lookUp", false);
+            animator.SetBool("lookDown", false);
         }
     }
 
