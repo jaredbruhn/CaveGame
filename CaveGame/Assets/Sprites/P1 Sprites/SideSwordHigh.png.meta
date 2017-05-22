@@ -1,12 +1,13 @@
 fileFormatVersion: 2
 guid: fa81024fd02d5444bbd9a4091f610300
-timeCreated: 1493510684
+timeCreated: 1495188293
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: SideSwordHigh_0
     21300002: SideSwordHigh_1
     21300004: SideSwordHigh_2
+    21300006: SideSwordHigh_3
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -116,6 +117,19 @@ TextureImporter:
         height: 64
       alignment: 9
       pivot: {x: 0.4, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SideSwordHigh_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 64
+      alignment: 9
+      pivot: {x: 0.4, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

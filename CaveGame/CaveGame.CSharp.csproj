@@ -76,6 +76,18 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="DOTween">
+      <HintPath>Assets\Demigiant\DOTween\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween43">
+      <HintPath>Assets\Demigiant\DOTween\DOTween43.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween46">
+      <HintPath>Assets\Demigiant\DOTween\DOTween46.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween50">
+      <HintPath>Assets\Demigiant\DOTween\DOTween50.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="CaveGame.CSharp.Plugins.csproj">
@@ -84,6 +96,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Demigiant\DOTween\Examples\Basics.cs" />
+    <Compile Include="Assets\Demigiant\DOTween\Examples\Sequences.cs" />
     <Compile Include="Assets\Ferr\2D\Scripts\Ferr2D_DynamicMesh.cs" />
     <Compile Include="Assets\Ferr\2D\Scripts\Ferr2D_IPath.cs" />
     <Compile Include="Assets\Ferr\2D\Scripts\Ferr2D_Path.cs" />
@@ -153,10 +167,19 @@
     <Compile Include="Assets\Ferr\Common\Scripts\SOUtil.cs" />
     <Compile Include="Assets\Ferr\Common\Scripts\Singleton.cs" />
     <Compile Include="Assets\Ferr\Common\Scripts\WebMessager.cs" />
-    <Compile Include="Assets\PhysicsObject.cs" />
-    <Compile Include="Assets\PlayerPlatformerController.cs" />
+    <Compile Include="Assets\Scripts\CrawlOnWalls.cs" />
+    <Compile Include="Assets\Scripts\DustParticleAnimation.cs" />
+    <Compile Include="Assets\Scripts\PhysicsObject.cs" />
+    <Compile Include="Assets\Scripts\PlayerPlatformerController.cs" />
+    <Compile Include="Assets\Scripts\ZMovementHandler.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Demigiant\DOTween\DOTween.XML" />
+    <None Include="Assets\Demigiant\DOTween\DOTween43.xml" />
+    <None Include="Assets\Demigiant\DOTween\DOTween46.xml" />
+    <None Include="Assets\Demigiant\DOTween\DOTween50.xml" />
+    <None Include="Assets\Demigiant\DOTween\Editor\DOTweenEditor.XML" />
+    <None Include="Assets\Demigiant\DOTween\readme.txt" />
     <None Include="Assets\Ferr\2D\Scripts\poly2tri.cs\AUTHORS.txt" />
     <None Include="Assets\Ferr\2D\Scripts\poly2tri.cs\LICENSE.txt" />
     <None Include="Assets\Ferr\2DTerrain\Shaders\Ferr2DTCommon.cginc" />
