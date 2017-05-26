@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 3ace84dfedb118d40967f5858a31106a
-timeCreated: 1494033627
+timeCreated: 1495762807
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -9,6 +9,8 @@ TextureImporter:
     21300004: SideRunAttackLeft_2
     21300006: SideRunAttackLeft_3
     21300008: SideRunAttackLeft_4
+    21300010: SideRunAttackLeft_5
+    21300012: SideRunAttackLeft_6
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -139,6 +141,32 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
+        y: 0
+        width: 64
+        height: 32
+      alignment: 9
+      pivot: {x: 0.8, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SideRunAttackLeft_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 32
+      alignment: 9
+      pivot: {x: 0.8, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SideRunAttackLeft_6
+      rect:
+        serializedVersion: 2
+        x: 384
         y: 0
         width: 64
         height: 32
