@@ -83,23 +83,26 @@ public class PlayerPlatformerController : PhysicsObject {
             {
                 if (!playerClearForward) //check feet collision
                 {
-                    transform.position = new Vector3(transform.position.x, transform.position.y + (0.5f * transform.localScale.y), transform.position.z + 1);
+                    //transform.position = new Vector3(transform.position.x, transform.position.y + (0.5f * transform.localScale.y), transform.position.z + 1);
                 }
                 else
                 {
-                    transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 1);
+                    //animator.SetTrigger("moveForward");
+                    GameObject.Find("MultiOrthoCamera").SendMessage("MoveForward");
+                    transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 10);
                 }
-                transform.localScale -= new Vector3(1,1,1);
-                RecalculateMovementValues();
+                //transform.localScale -= new Vector3(1,1,1);
+                //RecalculateMovementValues();
             }
         }
         if (Input.GetButtonDown("Backward"))
         {
             if (canMoveBackward)
             {
-                transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 1);
-                transform.localScale += new Vector3(1,1,1);
-                RecalculateMovementValues();
+                GameObject.Find("MultiOrthoCamera").SendMessage("MoveBackward");
+                transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 10);
+                //transform.localScale += new Vector3(1,1,1);
+                //RecalculateMovementValues();
             }
 
         }

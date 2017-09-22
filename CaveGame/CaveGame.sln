@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaveGame.CSharp.Plugins", "CaveGame.CSharp.Plugins.csproj", "{5A2A41B8-6B6E-3504-94F0-A074B204F01C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaveGame.CSharp", "CaveGame.CSharp.csproj", "{388DC473-BF14-C3DF-CCD1-172093F80F7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaveGame.CSharp.Plugins", "CaveGame.CSharp.Plugins.csproj", "{5A2A41B8-6B6E-3504-94F0-A074B204F01C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaveGame.CSharp.Editor", "CaveGame.CSharp.Editor.csproj", "{0692FBFE-474D-3F85-C07B-F99AACF7EEC6}"
 EndProject
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5A2A41B8-6B6E-3504-94F0-A074B204F01C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5A2A41B8-6B6E-3504-94F0-A074B204F01C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5A2A41B8-6B6E-3504-94F0-A074B204F01C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5A2A41B8-6B6E-3504-94F0-A074B204F01C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{388DC473-BF14-C3DF-CCD1-172093F80F7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{388DC473-BF14-C3DF-CCD1-172093F80F7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{388DC473-BF14-C3DF-CCD1-172093F80F7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{388DC473-BF14-C3DF-CCD1-172093F80F7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A2A41B8-6B6E-3504-94F0-A074B204F01C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A2A41B8-6B6E-3504-94F0-A074B204F01C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A2A41B8-6B6E-3504-94F0-A074B204F01C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A2A41B8-6B6E-3504-94F0-A074B204F01C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0692FBFE-474D-3F85-C07B-F99AACF7EEC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0692FBFE-474D-3F85-C07B-F99AACF7EEC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0692FBFE-474D-3F85-C07B-F99AACF7EEC6}.Release|Any CPU.ActiveCfg = Release|Any CPU

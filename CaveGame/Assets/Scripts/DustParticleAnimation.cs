@@ -19,5 +19,6 @@ public class DustParticleAnimation : MonoBehaviour {
     public void EnableDust(bool enable)
     {
         ps.enableEmission = enable;
+        //ps.emission.enabled.Equals(enable);
     }
 }
