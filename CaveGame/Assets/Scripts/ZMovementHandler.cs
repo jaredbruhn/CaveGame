@@ -8,10 +8,11 @@ public class ZMovementHandler : MonoBehaviour {
 
     GameObject childCollider;
     GameObject player;
-
+    Collider2D coll;
     void Start()
     {
         player = GameObject.Find("Player");
+        coll = GetComponent<Collider2D>();
     }
 
     void Update()
@@ -21,13 +22,11 @@ public class ZMovementHandler : MonoBehaviour {
             player.GetComponent<PlayerPlatformerController>().canMoveBackward = true;
             if (player.transform.position.z == transform.position.z)
             {
-                foreach (Transform child in transform)
-                    child.gameObject.SetActive(true);
+                coll.isTrigger = false;
             }
             else
             {
-                foreach (Transform child in transform)
-                    child.gameObject.SetActive(false);
+                coll.isTrigger = true;        
             }
         }
         if (Input.GetButtonUp("Backward"))
@@ -37,13 +36,11 @@ public class ZMovementHandler : MonoBehaviour {
 
             if (player.transform.position.z == transform.position.z)
             {
-                foreach (Transform child in transform)
-                    child.gameObject.SetActive(true);
+                coll.isTrigger = false;
             }
             else
             {
-                foreach (Transform child in transform)
-                    child.gameObject.SetActive(false);
+                coll.isTrigger = true;
             }
         }
     }

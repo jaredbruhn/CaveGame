@@ -12,7 +12,7 @@ public class PlayerPlatformerController : PhysicsObject {
     float savedSpeed;
     float initialGravityModifier;
 
-    public bool headClearForward, playerClearForward, canMoveBackward, playerPositionError;
+    public bool headClearForward, playerClearForward, canMoveBackward, isBackwards, playerPositionError;
 
     private SpriteRenderer spriteRenderer;
     Component DustAnim;
@@ -29,7 +29,7 @@ public class PlayerPlatformerController : PhysicsObject {
         initialGravityModifier = gravityModifier;
         initialScale = transform.localScale.x;  //x and y should be the same
         headClearForward = true; playerClearForward = true; canMoveBackward = true;
-        RecalculateMovementValues();
+        //RecalculateMovementValues();
     }
 
     protected override void CorrectCollider()
@@ -60,6 +60,16 @@ public class PlayerPlatformerController : PhysicsObject {
         {
             animator.SetTrigger("attack");
         }
+
+        if (Input.GetButtonDown("FlipCamera"))
+        {
+            //transform.Rotate(transform.up, 180);
+            spriteRenderer.flipX = !spriteRenderer.flipX;
+            isBackwards = !isBackwards;
+            //GameObject.Find("MultiOrthoCamera").SendMessage("MoveForward");
+            GameObject.Find("MultiOrthoCamera").transform.Rotate(transform.up, 180);
+        }
+
 
         if (Input.GetAxis("Vertical") > 0)
         {
@@ -108,33 +118,36 @@ public class PlayerPlatformerController : PhysicsObject {
         }
     }
 
-    void RecalculateMovementValues()
-    {
-        radius = transform.localScale.x * 0.1f;
-        gravityModifier = transform.localScale.x * 0.5f;
-        initialGravityModifier = gravityModifier;
-        maxSpeed = transform.localScale.x * 3;
-        jumpTakeOffSpeed = transform.localScale.x * 4;
-        fallGravity = transform.localScale.x * 2;
-    }
+    //void RecalculateMovementValues()
+    //{
+    //    radius = transform.localScale.x * 0.1f;
+    //    gravityModifier = transform.localScale.x * 0.5f;
+    //    initialGravityModifier = gravityModifier;
+    //    maxSpeed = transform.localScale.x * 3;
+    //    jumpTakeOffSpeed = transform.localScale.x * 4;
+    //    fallGravity = transform.localScale.x * 2;
+    //}
 
-    void ChangeMaxSpeed(float newSpeedScale)
-    {
-        savedSpeed = maxSpeed;
-        maxSpeed = newSpeedScale * maxSpeed;
-    }
+    //void ChangeMaxSpeed(float newSpeedScale)
+    //{
+    //    savedSpeed = maxSpeed;
+    //    maxSpeed = newSpeedScale * maxSpeed;
+    //}
 
-    void RevertSpeed()
-    {
-        maxSpeed = savedSpeed;
-    }
+    //void RevertSpeed()
+    //{
+    //    maxSpeed = savedSpeed;
+    //}
 
     protected override void ComputeVelocity()
     {
 
         Vector2 move = Vector2.zero;
+        if (!isBackwards)
+            move.x = Input.GetAxis("Horizontal");
+        else
+            move.x = -Input.GetAxis("Horizontal");
 
-        move.x = Input.GetAxis("Horizontal");
 
         if (Input.GetButtonDown ("Jump") && grounded)
         {
@@ -153,7 +166,11 @@ public class PlayerPlatformerController : PhysicsObject {
 
         if (move.x > 0.01f)
         {
-            animator.SetBool("lookLeft", false);
+            if (!isBackwards)
+                animator.SetBool("lookLeft", false);
+            else
+                animator.SetBool("lookLeft", true);
+
             if (grounded && move.x > 0.99f)
             {
                 print("right particle");
@@ -164,7 +181,11 @@ public class PlayerPlatformerController : PhysicsObject {
         }
         else if (move.x < -0.01f)
         {
-            animator.SetBool("lookLeft", true);
+            if (!isBackwards)
+                animator.SetBool("lookLeft", true);
+            else
+                animator.SetBool("lookLeft", false);
+
             if (grounded && move.x < -0.99f)
             {
                 print("right particle");
@@ -179,7 +200,7 @@ public class PlayerPlatformerController : PhysicsObject {
         }
 
         animator.SetBool("grounded", grounded);
-        animator.SetFloat("velocityX", velocity.x / maxSpeed); //took out Abs
+        animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed); //took out Abs
         animator.SetFloat("velocityY", velocity.y / maxSpeed); //took out Abs
 
         targetVelocity = move * maxSpeed;
